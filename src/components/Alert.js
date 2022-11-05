@@ -5,6 +5,7 @@ const Alert = (props) => {
   useEffect(() => {
     const timerId = setTimeout(closeAlert, 3000);
     return () => clearTimeout(timerId);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [name]);
   return (
     <div className="toast-container">

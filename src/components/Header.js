@@ -5,12 +5,12 @@ const Header = () => {
     <nav>
       <div className="container">
         <div className="nav-wrapper">
-          <a href="#" className="brand-logo">
+          <a href="!#" className="brand-logo">
             Fortnite Shop
           </a>
           <ul id="nav-mobile" className="right hide-on-med-and-down">
             <li>
-              <a href="!#">Repo</a>
+              <a href="https://github.com/vadimlipatov/react-shop">Repo</a>
             </li>
           </ul>
         </div>
