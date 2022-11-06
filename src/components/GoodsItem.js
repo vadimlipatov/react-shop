@@ -1,14 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
+import { ShopContext } from "../context";
 
 const GoodsItem = (props) => {
-  const {
-    mainId,
-    displayName,
-    displayDescription,
-    price,
-    displayAssets,
-    addGoodToCart,
-  } = props;
+  const { mainId, displayName, displayDescription, price, displayAssets } =
+    props;
+
+  const { addToBasket } = useContext(ShopContext);
 
   const item = {
     id: mainId,
@@ -27,7 +24,7 @@ const GoodsItem = (props) => {
           <p>{displayDescription}</p>
         </div>
         <div className="card-action">
-          <button onClick={() => addGoodToCart(item)} className="btn">
+          <button onClick={() => addToBasket(item)} className="btn">
             Купить
           </button>
           <span className="right" style={{ fontSize: "1.8rem" }}>

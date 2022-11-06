@@ -1,15 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
+import { ShopContext } from "../context";
 
-const Alert = (props) => {
-  const { name = "", closeAlert = Function.prototype } = props;
+const Alert = () => {
+  const { closeAlert = Function.prototype, alertName } =
+    useContext(ShopContext);
   useEffect(() => {
     const timerId = setTimeout(closeAlert, 3000);
     return () => clearTimeout(timerId);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [name]);
+  }, [alertName]);
   return (
     <div className="toast-container">
-      <div className="toast">{name} добавлен в корзину</div>
+      <div className="toast">{alertName} добавлен в корзину</div>
     </div>
   );
 };
